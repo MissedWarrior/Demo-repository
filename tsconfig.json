@@ -23,7 +23,8 @@
     "jsx": "react",
     "paths": {
       "@components/*": ["components/*"],
-      "@store/*": ["store/*"]
+      "@store/*": ["store/*"],
+      "@pages/*": ["pages/*"]
     }
   },
   "include": [
