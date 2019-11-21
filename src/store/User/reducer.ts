@@ -5,6 +5,7 @@ import {Reducer} from 'redux';
 const initialState: User = {
   name: 'asd',
   email: 'asd@asd.ru',
+  isLoggedIn: false,
 };
 
 const reducer: Reducer<User> = (state = initialState, action) => {
@@ -14,6 +15,7 @@ const reducer: Reducer<User> = (state = initialState, action) => {
         ...state,
         name: 'Fedya',
         email: 'fedya@lipt-soft.ru',
+        isLoggedIn: true,
       }
     }
     default: {
