@@ -1,9 +1,13 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {rootReducerType} from  '@store/index';
 
-import logo from "../../logo.svg";
+import logo from '../../logo.svg';
 
 const Index: React.FC = () => {
+  const state = useSelector((state: rootReducerType) => state.user);
+
   return (
     <div className="App">
       <div className="App-header">
@@ -17,7 +21,7 @@ const Index: React.FC = () => {
         <span
           className="App-link"
         >
-          Learn React
+          Hello, {state.name}
         </span>
       </div>
     </div>
