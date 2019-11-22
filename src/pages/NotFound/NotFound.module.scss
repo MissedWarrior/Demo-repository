@@ -1,0 +1,9 @@
+@import '../../vars';
+
+.link {
+    color: $link;
+
+    &:hover {
+        color: $link-hover;
+    }
+}
