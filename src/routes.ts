@@ -1,4 +1,5 @@
 import React from 'react';
+import {RouteComponentProps} from 'react-router-dom';
 
 import Index from '@pages/Index/Index';
 import Detail from '@pages/Detail/Detail';
@@ -6,7 +7,7 @@ import Login from '@pages/auth/Login/Login';
 
 export type Pages = {
   path: string,
-  component: React.FC,
+  component: React.ComponentType<RouteComponentProps<any>>|React.ComponentType<any>,
   requireAuth?: boolean,
   isNotAvailableAfterLogin?: boolean,
   title?: string,
