@@ -16,7 +16,7 @@ const Index: React.FC = () => {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <div>
-          {user.isLoggedIn ? <Link className={"App-link"} to={'detail'}>Go to Details page</Link> :
+          {user.isLoggedIn ? <Link className={"App-link"} to={'/legal-list'}>Go to Legal List page</Link> :
             <Link className="App-link" to={"/login"}>Go to Login page</Link>}
         </div>
         <span

@@ -1,9 +1,9 @@
 import React from 'react';
 
+// import s from './Detail.module.scss'
+
 const Detail: React.FC = () => {
-  return (
-    <div>Guarded</div>
-  );
+  return null;
 };
 
 export default Detail;

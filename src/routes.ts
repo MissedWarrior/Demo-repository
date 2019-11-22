@@ -4,6 +4,7 @@ import {RouteComponentProps} from 'react-router-dom';
 import Index from '@pages/Index/Index';
 import Detail from '@pages/Detail/Detail';
 import Login from '@pages/auth/Login/Login';
+import LegalList from '@pages/LegalList/LegalList';
 
 export type Pages = {
   path: string,
@@ -24,8 +25,13 @@ const routes: Pages[] = [
     isNotAvailableAfterLogin: true,
   },
   {
-    path: '/detail',
+    path: '/legal-list/:id',
     component: Detail,
+    requireAuth: true,
+  },
+  {
+    path: '/legal-list',
+    component: LegalList,
     requireAuth: true,
   },
 ];
