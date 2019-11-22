@@ -3,8 +3,8 @@ import {User} from './types';
 import {Reducer} from 'redux';
 
 const initialState: User = {
-  name: 'asd',
-  email: 'asd@asd.ru',
+  name: '',
+  email: '',
   isLoggedIn: false,
 };
 

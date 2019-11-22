@@ -1,3 +1,11 @@
+@import "./vars";
+
+#app {
+    background-color: $main-bc;
+    color: $text-color-white;
+    height: 100%;
+}
+
 .App {
     text-align: center;
 }
