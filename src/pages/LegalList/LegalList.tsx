@@ -19,6 +19,9 @@ const LegalList: React.FC = () => {
       <div className={s.mb1}>
         <Link to={'/'} className={s.link}>Back to main page</Link>
       </div>
+      <div className={s.mb1}>
+        <Link to={'/legal-list/4'} className={s.link}>Go to missing page</Link>
+      </div>
       {legals.length ?
         <table className={s.table}>
           <thead>
