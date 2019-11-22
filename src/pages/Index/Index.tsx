@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import {rootReducerType} from  '@store/index';
+import {rootReducerType} from '@store/index';
 
 import logo from '../../logo.svg';
 
 const Index: React.FC = () => {
-  const state = useSelector((state: rootReducerType) => state.user);
+  const {user} = useSelector((state: rootReducerType) => state);
 
   return (
     <div className="App">
@@ -16,12 +16,13 @@ const Index: React.FC = () => {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <div>
-          <Link className="App-link" to={"/login"}>Login</Link>
+          {user.isLoggedIn ? <Link className={"App-link"} to={'detail'}>Go to Details page</Link> :
+            <Link className="App-link" to={"/login"}>Go to Login page</Link>}
         </div>
         <span
           className="App-link"
         >
-          Hello, {state.name}
+          Hello, {user.isLoggedIn ? user.name : 'Guest'}
         </span>
       </div>
     </div>
