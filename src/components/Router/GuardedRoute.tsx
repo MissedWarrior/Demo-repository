@@ -1,6 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {rootReducerType} from '@store/index';
+// todo: remove ts-ignore
+// @ts-ignore
 import {Redirect, RouteProps, Route} from 'react-router-dom';
 
 const GuardedRoute: React.FC<RouteProps> = (props) => {

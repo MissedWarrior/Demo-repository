@@ -1,16 +1,18 @@
 import React, {FormEvent} from 'react';
-import {Link, RouteComponentProps} from 'react-router-dom';
+import {Link} from 'react-router5';
 import {useDispatch} from 'react-redux';
 
 import s from './Login.module.scss';
 
-const Login: React.FC<RouteComponentProps> = (props) => {
+const Login: React.FC = (props) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch({type: 'user/SET_USER'});
 
+    // todo: remove ts-ignore
+    // @ts-ignore
     props.history.push('/');
   };
 

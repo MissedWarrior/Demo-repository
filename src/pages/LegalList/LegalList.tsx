@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {rootReducerType} from '@store/index';
 import {LegalActions, REMOVE_LEGAL} from '@store/Legals/actionTypes';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router5';
 
 import s from './LegalList.module.scss';
 
@@ -42,7 +42,7 @@ const LegalList: React.FC = () => {
                 <td className={s.table_cell}>
                   <div className={s.cell_inner}>
                     <div className={s.mr1}>
-                      <Link className={`${s.btn} ${s.table_btn} ${s.btn_link}`} to={`/legal-list/${item.id}`}>More</Link>
+                      <Link className={`${s.btn} ${s.table_btn} ${s.btn_link}`} routeName={'Legals.Details'} routeParams={item.id}>More</Link>
                     </div>
                     <div className="">
                       <button className={`${s.btn} ${s.table_btn}`} onClick={() => handleRemove(item.id)}>Remove legal

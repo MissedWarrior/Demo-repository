@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router5';
 import {useSelector} from 'react-redux';
 import {rootReducerType} from '@store/index';
 
@@ -16,7 +16,7 @@ const Index: React.FC = () => {
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <div>
-          {user.isLoggedIn ? <Link className={"App-link"} to={'/legal-list'}>Go to Legal List page</Link> :
+          {user.isLoggedIn ? <Link className={"App-link"} routeName={'Legals'}>Go to Legal List page</Link> :
             <Link className="App-link" to={"/login"}>Go to Login page</Link>}
         </div>
         <span
