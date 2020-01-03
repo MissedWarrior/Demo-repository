@@ -8,23 +8,23 @@ export const routes: Routes[] = [
     name: 'Index',
     component: Index,
   },
-  {
-    path: '/legals',
-    name: 'Legals',
-    loadComponent: () => import('@pages/LegalList/LegalList'),
-    children: [
-      {
-        path: '/:id',
-        name: 'Detail',
-        loadComponent: () => import('@pages/Detail/Detail'),
-      },
-    ],
-  },
-  {
-    path: '/404',
-    name: 'Not found',
-    loadComponent: () => import('@pages/NotFound/NotFound'),
-  },
+  // {
+  //   path: '/legals',
+  //   name: 'Legals',
+  //   loadComponent: () => import('@pages/LegalList/LegalList'),
+  //   children: [
+  //     {
+  //       path: '/:id',
+  //       name: 'Detail',
+  //       loadComponent: () => import('@pages/Detail/Detail'),
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/404',
+  //   name: 'Not found',
+  //   loadComponent: () => import('@pages/NotFound/NotFound'),
+  // },
 ];
 
 

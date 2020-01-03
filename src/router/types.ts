@@ -1,4 +1,4 @@
-import {Component, FC} from 'react';
+import {ComponentClass, FC} from 'react';
 import {Route} from 'router5';
 
 export interface Routes extends Route {
@@ -11,13 +11,10 @@ export interface Routes extends Route {
   loadComponent?: AsyncComponentPromise,
 }
 
-export type ReactAnyComponent<Props = object, State = object> = FC<Props> | Component<Props, State>;
+export type ReactAnyComponent<Props = object, State = object> = FC<Props> | ComponentClass<Props, State>;
 
 export type EsModuleComponent = {
   default: ReactAnyComponent,
 }
 
-export type AsyncComponentPromise = (
-  resolve: (component: ReactAnyComponent) => void,
-  reject: (reason?: any) => void,
-) => Promise<ReactAnyComponent | EsModuleComponent> | void;
+export type AsyncComponentPromise = () => Promise<ReactAnyComponent | EsModuleComponent>;

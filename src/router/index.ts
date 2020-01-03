@@ -4,7 +4,6 @@ import {routes} from './routes';
 
 export const router = _createRouter();
 
-
 function _createRouter() {
   const router = createRouter(routes);
 
