@@ -1,17 +1,23 @@
-import React, {Fragment} from 'react';
+import React, {FC} from 'react';
+import {useRouteNode} from 'react-router5';
+
+import NotFound from '@pages/NotFound/NotFound';
+
+import {getRoute} from './router/middleware';
+import {routes} from './router/routes';
 
 import './App.scss';
 
-// todo: remove ts-ignore
-// @ts-ignore
-const App: React.FC = ({childRoute}) => {
-  import('@pages/Detail/Detail')
-    .then(data => console.log(data.Detail({})));
-  return (
-    <Fragment>
-      {childRoute}
-    </Fragment>
-  );
+const App: FC = () => {
+  const router = useRouteNode('');
+  const route = getRoute(router.route.name, routes);
+
+  console.log(route);
+
+  if (!route || !route.component) return (<NotFound/>);
+
+  const Component = route.component;
+  return (<Component/>);
 };
 
 export default App;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router5';
 import {useSelector} from 'react-redux';
+
 import {rootReducerType} from '@store/index';
 
 import logo from '../../logo.svg';
@@ -17,7 +18,7 @@ const Index: React.FC = () => {
         </p>
         <div>
           {user.isLoggedIn ? <Link className={"App-link"} routeName={'Legals'}>Go to Legal List page</Link> :
-            <Link className="App-link" to={"/login"}>Go to Login page</Link>}
+            <Link className="App-link" routeName={'Login'}>Go to Login page</Link>}
         </div>
         <span
           className="App-link"

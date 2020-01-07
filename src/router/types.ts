@@ -1,20 +1,24 @@
 import {ComponentClass, FC} from 'react';
 import {Route} from 'router5';
 
-export interface Routes extends Route {
+export interface CustomRoute extends Route {
   component?: ReactAnyComponent,
   requireAuth?: boolean,
   isNotAvailableAfterLogin?: boolean,
   title?: string,
-  children?: Routes[],
+  children?: CustomRoute[],
 
   loadComponent?: AsyncComponentPromise,
 }
 
-export type ReactAnyComponent<Props = object, State = object> = FC<Props> | ComponentClass<Props, State>;
+export type ReactAnyComponent<Props = any, State = any> = FC<Props> | ComponentClass<Props, State>;
 
-export type EsModuleComponent = {
+export type EsModuleDefault = {
   default: ReactAnyComponent,
 }
 
-export type AsyncComponentPromise = () => Promise<ReactAnyComponent | EsModuleComponent>;
+export type EsModuleComponent = {
+  [key: string]: ReactAnyComponent,
+}
+
+export type AsyncComponentPromise = () => Promise<EsModuleDefault | EsModuleComponent>;

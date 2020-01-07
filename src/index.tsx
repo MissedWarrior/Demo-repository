@@ -10,11 +10,13 @@ import store from './store';
 import './index.scss';
 
 
-ReactDOM.render(
-  <Provider store={store}>
-    <RouterProvider
-      router={router}>
-      <App/>
-    </RouterProvider>
-  </Provider>,
-  document.getElementById('app'));
+const renderApp = () =>
+  ReactDOM.render(
+    <Provider store={store}>
+      <RouterProvider router={router}>
+        <App/>
+      </RouterProvider>
+    </Provider>,
+    document.getElementById('app'));
+
+router.start(renderApp);

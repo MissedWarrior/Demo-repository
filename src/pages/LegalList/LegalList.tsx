@@ -1,8 +1,10 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+
+import {Link} from 'react-router5';
+
 import {rootReducerType} from '@store/index';
 import {LegalActions, REMOVE_LEGAL} from '@store/Legals/actionTypes';
-import {Link} from 'react-router5';
 
 import s from './LegalList.module.scss';
 
@@ -17,10 +19,10 @@ const LegalList: React.FC = () => {
   return (
     <div>
       <div className={s.mb1}>
-        <Link to={'/'} className={s.link}>Back to main page</Link>
+        <Link routeName={'Index'} className={s.link}>Back to main page</Link>
       </div>
       <div className={s.mb1}>
-        <Link to={'/legal-list/4'} className={s.link}>Go to missing page</Link>
+        <Link routeName={'Detail'} routeParams={{id: 4}} className={s.link}>Go to missing page</Link>
       </div>
       {legals.length ?
         <table className={s.table}>
@@ -42,9 +44,9 @@ const LegalList: React.FC = () => {
                 <td className={s.table_cell}>
                   <div className={s.cell_inner}>
                     <div className={s.mr1}>
-                      <Link className={`${s.btn} ${s.table_btn} ${s.btn_link}`} routeName={'Legals.Details'} routeParams={item.id}>More</Link>
+                      <Link className={`${s.btn} ${s.table_btn} ${s.btn_link}`} routeName={'Legals.Detail'} routeParams={{id: item.id}}>More</Link>
                     </div>
-                    <div className="">
+                    <div>
                       <button className={`${s.btn} ${s.table_btn}`} onClick={() => handleRemove(item.id)}>Remove legal
                       </button>
                     </div>
